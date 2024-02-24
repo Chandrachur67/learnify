@@ -17,7 +17,7 @@ const InstructorVideo = () => {
     };
 
     const getInstructorData = async () => {
-        const data = await fetch(`http://localhost:8000/video/getVideos`, {
+        const data = await fetch(`${process.env.REACT_APP_BASE_URL}/video/getVideos`, {
             method: 'POST',
             headers: {
                 Authorization: localStorage.getItem("token")
@@ -88,7 +88,7 @@ const Container = styled.div`
   .videos-page {
     width: 100%;
     /* height: 100%; */
-    height: calc(100vh - 240px);
+    /* height: calc(100vh - 240px); */
 
     .create-course-button {
         width: 100%;
@@ -97,7 +97,7 @@ const Container = styled.div`
     }
   }
 
-  .videos{
+    .videos{
         width: 100%;
         height: 100%;
         display: flex;

@@ -28,7 +28,7 @@ const Courses = () => {
     };
     const fetchHandler = async () => {
         setLoading(true)
-        const data = await fetch(`http://localhost:8000/course/getCourses`, {
+        const data = await fetch(`${process.env.REACT_APP_BASE_URL}/course/getCourses`, {
             method: 'POST',
             headers: {
                 Authorization: localStorage.getItem("token"),
@@ -46,7 +46,7 @@ const Courses = () => {
     }
 
     const enroll = async (courseId) => {
-        const data = await fetch(`http://localhost:8000/course/enroll/${ courseId }`, {
+        const data = await fetch(`${process.env.REACT_APP_BASE_URL}/course/enroll/${ courseId }`, {
             method: 'POST',
             headers: {
                 Authorization: localStorage.getItem("token"),
@@ -124,7 +124,7 @@ const Container = styled.div`
 
     .course-container{
         width: 100%;
-        height: calc(100vh - 240px);
+        /* height: calc(100vh - 240px); */
         background-color: white;
         padding: 20px 30px;
         margin: auto;
@@ -199,7 +199,7 @@ const Container = styled.div`
         width: 100%;
         display: flex;
         flex-direction: row;
-        height: 100%;
+        /* height: 100%; */
         flex-wrap: wrap;
         display: flex;
         flex-direction: row;
